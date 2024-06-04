@@ -1,0 +1,28 @@
+@import "../../responsive.scss";
+@import "../../variables.scss";
+
+.layout {
+   height: 100vh;
+   max-width: 1360px;
+   margin: 0 auto;
+   padding: 0 1rem;
+   color: $dark;
+   display: flex;
+   flex-direction: column;
+
+   @include large {
+      max-width: 1280px;
+   }
+
+   @include medium {
+      max-width: 768px;
+   }
+
+   @include small {
+      max-width: 640px;
+   }
+
+   .content {
+      flex: 1;
+   }
+}

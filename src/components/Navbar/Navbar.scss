@@ -1,0 +1,100 @@
+@import "../../responsive.scss";
+
+nav {
+   height: 150px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.link {
+   transition: all 0.4s ease-in-out;
+
+   @include small {
+      display: none;
+   }
+   &:hover {
+      scale: 1.05;
+   }
+}
+
+.left {
+   flex: 3;
+   display: flex;
+   align-items: center;
+   gap: 50px;
+   .logo {
+      @include medium {
+         display: none;
+      }
+      @include small {
+         display: initial;
+      }
+   }
+}
+
+// -- right
+
+.right {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   background-color: transparent;
+   height: 100%;
+   background-color: white;
+
+   @include medium {
+      background-color: transparent;
+   }
+
+   a {
+      padding: 12px 24px;
+   }
+
+   .register {
+      background-color: #f9977b;
+      border-radius: 12px;
+   }
+   .menuIcon {
+      display: none;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 999;
+      color: white;
+      fill: black;
+
+      @include small {
+         display: inline;
+         font-size: 36px;
+      }
+   }
+   .burger-active {
+      fill: white;
+   }
+   .menu {
+      position: absolute;
+      top: 0;
+      right: -100%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      gap: 28px;
+
+      &.active {
+         right: 0;
+      }
+
+      @include small {
+         a {
+            display: initial;
+         }
+      }
+   }
+}

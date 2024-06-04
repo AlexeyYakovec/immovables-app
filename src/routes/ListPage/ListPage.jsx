@@ -5,6 +5,7 @@ import { listData } from "../../data/data";
 
 import Filter from "../../components/Filter/Filter";
 import Card from "../../components/Card/Card";
+import Map from "../../components/Map/Map";
 
 function ListPage() {
    const data = listData;
@@ -18,7 +19,9 @@ function ListPage() {
                })}
             </div>
          </div>
-         <div className="mapContainer">mapContainer</div>
+         <div className="mapContainer">
+            <Map items={data} />
+         </div>
       </div>
    );
 }

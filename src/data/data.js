@@ -116,5 +116,5 @@ export const singlePostData = {
 export const userData = {
    id: 1,
    name: "John Doe",
-   img: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+   img: "https://media.istockphoto.com/id/155472787/ru/фото/on-the-road.jpg?s=2048x2048&w=is&k=20&c=pu4oymlmsvxFPeaN2tBdxCbgvCWxdb04eK39djj97HA=",
 };

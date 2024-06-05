@@ -4,9 +4,12 @@ import "./Navbar.scss";
 import { CiMenuBurger } from "react-icons/ci";
 
 import logo from "../../../public/logo1.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
    const [open, setOpen] = useState(false);
+
+   const user = true;
    return (
       <nav>
          <div className="left">
@@ -17,50 +20,43 @@ const Navbar = () => {
                   alt=""
                />
             </a>
-
-            <a href="/" className="link">
-               Home
-            </a>
-            <a href="/" className="link">
-               About
-            </a>
-            <a href="/" className="link">
-               Contact
-            </a>
-            <a href="/" className="link">
-               Agents
-            </a>
+            <a href="/">Home</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+            <a href="/">Agents</a>
          </div>
          <div className="right">
-            <a href="/" className="link">
-               Sign in
-            </a>
-            <a href="/" className="link register">
-               Sign up
-            </a>
+            {user ? (
+               <div className="user">
+                  <img
+                     src="https://media.istockphoto.com/id/155472787/ru/фото/on-the-road.jpg?s=2048x2048&w=is&k=20&c=pu4oymlmsvxFPeaN2tBdxCbgvCWxdb04eK39djj97HA="
+                     alt=""
+                  />
+                  <span>John Doe</span>
+                  <Link to="/profile" className="profile">
+                     <div className="notification">3</div>
+                     <span>Profile</span>
+                  </Link>
+               </div>
+            ) : (
+               <>
+                  <a href="/">Sign in</a>
+                  <a href="/" className="register">
+                     Sign up
+                  </a>
+               </>
+            )}
             <CiMenuBurger
                className={open ? "menuIcon burger-active" : "menuIcon"}
                onClick={() => setOpen(!open)}
             />
             <div className={open ? "menu active" : "menu"}>
-               <a href="/" className="link">
-                  Home
-               </a>
-               <a href="/" className="link">
-                  About
-               </a>
-               <a href="/" className="link">
-                  Contact
-               </a>
-               <a href="/" className="link">
-                  Agents
-               </a>
-               <a href="/" className="link">
-                  Sign in
-               </a>
-               <a href="/" className="link">
-                  Sign up
-               </a>
+               <a href="/">Home</a>
+               <a href="/">About</a>
+               <a href="/">Contact</a>
+               <a href="/">Agents</a>
+               <a href="/">Sign in</a>
+               <a href="/">Sign up</a>
             </div>
          </div>
       </nav>
